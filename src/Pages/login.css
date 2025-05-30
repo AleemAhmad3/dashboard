@@ -1,0 +1,170 @@
+.login-card {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-color);
+  display: flex;
+}
+.login-card .left {
+  position: relative;
+  height: auto;
+  width: 60%;
+  margin: var(--default-margin);
+  background-image: url("/public/loginimg.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  border-radius: var(--default-border-radius);
+}
+
+.login-card .left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(235, 188, 94, 0.4),
+    rgba(235, 98, 169, 0.4)
+  );
+  z-index: 1;
+}
+
+.login-card .right {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.login-card .right .title {
+  font-size: var(--fontsize-heading-responsive);
+  font-weight: 500;
+  background: var(--gradient-one);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.login-card .right .description {
+  font-size: var(--fontsize-medium);
+  color: gray;
+  width: 80%;
+  text-align: center;
+}
+
+.login-card .right input {
+  width: 80%;
+  outline: none;
+  border: none;
+  border: 2px solid transparent;
+  border-radius: var(--default-border-radius);
+  padding: var(--input-padding);
+  box-shadow: var(--all-side-box-shadow);
+}
+.login-card .right input:focus-within {
+  width: 80%;
+  border: 2px solid transparent;
+  border-radius: var(--default-border-radius);
+  background: linear-gradient(to right, white, white), var(--gradient-one);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  box-shadow: none;
+}
+
+.login-card .right .filled-btn {
+  width: 85%;
+  padding: var(--input-padding);
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: var(--default-border-radius);
+  background: var(--gradient-one);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  cursor: pointer;
+  color: var(--white-color);
+  font-weight: 700;
+}
+.login-card .right .filled-btn:hover {
+  border: 2px solid transparent;
+  border-radius: var(--default-border-radius);
+  background: linear-gradient(
+      to right,
+      var(--background-color),
+      var(--background-color)
+    ),
+    var(--gradient-one);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  color: var(--gradient-one);
+}
+.login-card .right .filled-btn:hover span {
+  background: var(--gradient-one);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 700;
+}
+.login-card .right .forgot-text {
+  font-size: var(--fontsize-large);
+}
+.login-card .right .forgot-text span {
+  background: var(--gradient-one);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.login-card .right .forgot-text span:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 2px;
+  width: 100%;
+  background: var(--gradient-one);
+}
+@media screen and (max-width: 768px) {
+  .login-card {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    height: 100vh;
+  }
+
+  .login-card .left {
+    display: none;
+  }
+
+  .login-card .right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .login-card .right input {
+    width: 80%;
+    outline: none;
+    border: none;
+    border: 2px solid transparent;
+    border-radius: var(--default-border-radius);
+    padding: var(--input-padding);
+    box-shadow: var(--all-side-box-shadow);
+  }
+  .login-card .right input:focus-within {
+    width: 80%;
+    border: 2px solid transparent;
+    border-radius: var(--default-border-radius);
+    background: linear-gradient(to right, white, white), var(--gradient-one);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+    box-shadow: none;
+  }
+}
